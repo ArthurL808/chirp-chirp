@@ -16,15 +16,13 @@ var counter = {
 }
 
 function countLetters(counter, sample_text){
-  // debugger;
+  var sampleText = sample_text.replace(/[^A-Za-z]/g,"")
   if(sample_text === ''){
     return
   }else{
-  let activeLetter = sample_text.slice(0,1).toLowerCase();
+  let activeLetter = sampleText.slice(0,1).toLowerCase();
   counter[activeLetter]++
-  // let sampleText = sample_text.substring(1)
-  // sample_text = sampleText
-  return countLetters(counter,sample_text.substring(1))
+  return countLetters(counter,sampleText.substring(1))
   }
 }
 
